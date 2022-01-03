@@ -1,15 +1,18 @@
 #include <unordered_map>
 #include <vector>
 #include <string>
+#include <algorithm>
+
+using namespace std;
 
 class StateMachine {
 private:
     typedef long long int64;
     int64 ans;
     int sign;
-    std::string state;
+    string state;
 
-    unordered_map<string, vector<string>> table = {
+    unordered_map< string, vector<string> > table = {
         /* ' ', '+/-', '9', 'a' */
         {"start", {"start", "signed", "in_number", "end"}},
         {"signed", {"end", "end", "in_number", "end"}},
@@ -38,7 +41,7 @@ private:
 public:
     StateMachine() : ans(0), sign(1), state("start") {}
 
-    int get_number(std::string s) {
+    int get_number(string s) {
         for (const auto& c : s) {
             go_to_state(c);
         }
