@@ -3,6 +3,7 @@
     "files.associations": {
         "iosfwd": "cpp",
         "vector": "cpp",
-        "iterator": "cpp"
+        "iterator": "cpp",
+        "unordered_map": "cpp"
     }
 }
